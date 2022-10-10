@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Trpo_2_laba
 {
@@ -25,16 +26,18 @@ namespace Trpo_2_laba
         public static Water curWater;
         public static int curPrice = 0;
         public static int Change;
-        
+        private DispatcherTimer timer = null;
+
         public MainWindow()
         {
             InitializeComponent();
             waterCol.AddRange(new List<Water>() {
-            new Water("Вода газ. 0.5",0.5, 10),
-            new Water("Вода негаз. 0.5",0.5, 5),
-            new Water("Вода газ. 1",1, 50),
-            new Water("Вода негаз. 1",1, 30)
+            new Water("Вода газ. 0.5л",0.5, 10),
+            new Water("Вода негаз. 0.5л",0.5, 5),
+            new Water("Вода газ. 1л",1, 50),
+            new Water("Вода негаз. 1л",1, 30)
             });
+            timer = null;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -52,37 +55,37 @@ namespace Trpo_2_laba
         {
             if(curWater == null)
             {
-                MessageBox.Show("Выбери товар!");
+                MessageBox.Show("Выберите товар!");
                 return;
             }
             switch ((sender as Button).Content.ToString())
             {
-                case "100р":
+                case "100₽":
                     curPrice += 100;
                     Change = curPrice - curWater.Price;
                     disp_rubTB.Text = curPrice.ToString() + $"\n Сдача: {Change}₽";
                     break;
-                case "50р":
+                case "50₽":
                     curPrice += 50;
                     Change = curPrice - curWater.Price;
                     disp_rubTB.Text = curPrice.ToString() + $"\n Сдача: {Change}₽";
                     break;
-                case "10р":
+                case "10₽":
                     curPrice += 10;
                     Change = curPrice - curWater.Price;
                     disp_rubTB.Text = curPrice.ToString() + $"\n Сдача: {Change}₽";
                     break;
-                case "5р":
+                case "5₽":
                     curPrice += 5;
                     Change = curPrice - curWater.Price;
                     disp_rubTB.Text = curPrice.ToString() + $"\n Сдача: {Change}₽";
                     break;
-                case "2р":
+                case "2₽":
                     curPrice += 2;
                     Change = curPrice - curWater.Price;
                     disp_rubTB.Text = curPrice.ToString() + $"\n Сдача: {Change}₽";
                     break;
-                case "1р":
+                case "1₽":
                     curPrice += 1;
                     Change = curPrice - curWater.Price;
                     disp_rubTB.Text = curPrice.ToString() + $"\n Сдача: {Change}₽";
@@ -98,6 +101,7 @@ namespace Trpo_2_laba
         {
             Clear();
         }
+
         private string Change_Calc(int change)
         {
             int main_counter = 0;
@@ -198,6 +202,7 @@ namespace Trpo_2_laba
         {
             if (curWater == null)
             {
+                MessageBox.Show("Выберите товар!");
                 return;
             }
             if (Change < 0)
@@ -205,16 +210,14 @@ namespace Trpo_2_laba
                 MessageBox.Show("Недостаточно средств!");
                 return;
             }
-            
+            Working_Window working_Window = new Working_Window();
+            working_Window.Show();
+            this.Hide();
             MessageBox.Show($"Спасибо за покупку!\nВаша сдача: {Change_Calc(Change)}₽");
+            working_Window.Close();
+            this.Show();
             Clear();
         }
-
-        private void Print()
-        {
-            MessageBox.Show("Наливаю");
-        }
-
         private void Clear()
         {
             curPrice = 0;

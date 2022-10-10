@@ -6,15 +6,15 @@
         xmlns:local="clr-namespace:Trpo_2_laba"
         mc:Ignorable="d"
         Icon="https://cdn-icons-png.flaticon.com/512/850/850785.png"
-        Title="Ключица" Height="450" Width="400" Background="DodgerBlue">
+        Title="Ключица" Height="450" Width="400" Background="#FF349DFF" ResizeMode="NoResize" WindowStyle="ToolWindow">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="FontSize" Value="18"/>
             <Setter Property="Margin" Value="4"/>
-            <Setter Property="Background" Value="#FFCC8181"></Setter>
+            <Setter Property="Background" Value="#FF91B8EC"></Setter>
         </Style>
     </Window.Resources>
-    
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -36,7 +36,7 @@
             <StackPanel
             >
                 <TextBlock 
-                Background="#FFED8787"
+                Background="#FF91B8EC"
                 TextAlignment="Center"
                 FontSize="18"
                 Text="Выберите товар..."
@@ -54,7 +54,7 @@
             <StackPanel
             >
                 <TextBlock 
-                Background="#FFED8787"
+                Background="#FF91B8EC"
                 TextAlignment="Center"
                 FontSize="18"
                 Text="Баланс..."
@@ -75,10 +75,10 @@
                />
             <Button x:Name="water_gas_5" Click="water_gas_5_Click"
                 
-                >Вода с газом 0.5л</Button>
-            <Button x:Name="water_ungas_5" Click="water_ungas_5_Click">Вода без газа 0.5л</Button>
-            <Button x:Name="water_gas_1" Click="water_gas_1_Click">Вода с газом 1л</Button>
-            <Button x:Name="water_ungas_1" Click="water_ungas_1_Click">Вода без газа 1л</Button>
+                >Вода с газом, 0.5л</Button>
+            <Button x:Name="water_ungas_5" Click="water_ungas_5_Click">Вода без газа, 0.5л</Button>
+            <Button x:Name="water_gas_1" Click="water_gas_1_Click">Вода с газом, 1л</Button>
+            <Button x:Name="water_ungas_1" Click="water_ungas_1_Click">Вода без газа, 1л</Button>
         </StackPanel>
         <StackPanel Grid.Row="1"
                     Grid.Column="2"
@@ -90,20 +90,29 @@
                 FontSize="18"
                 Text="Принимаем:"
                />
-            
+
             <WrapPanel
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center"
                 
-                Width="150"
+                Width="auto"
                 >
-                
-                <Button Click="Button_Click_1">100р</Button>
-                <Button Click="Button_Click_1">50р</Button>
-                <Button Click="Button_Click_1">10р</Button>
-                <Button Click="Button_Click_1">5р</Button>
-                <Button Click="Button_Click_1">2р</Button>
-                <Button Click="Button_Click_1">1р</Button>
+                <TextBlock
+                    Text="Купюры: "
+                    FontSize="14"
+                    VerticalAlignment="Center"
+                    ></TextBlock>
+                <Button Click="Button_Click_1">100₽</Button>
+                <Button Click="Button_Click_1">50₽</Button>
+                <TextBlock
+                    VerticalAlignment="Center"
+                    FontSize="14"
+                    Text="Монеты: "
+                    ></TextBlock>
+                <Button Click="Button_Click_1">10₽</Button>
+                <Button Click="Button_Click_1">5₽</Button>
+                <Button Click="Button_Click_1">2₽</Button>
+                <Button Click="Button_Click_1">1₽</Button>
             </WrapPanel>
         </StackPanel>
         <Button
@@ -124,5 +133,12 @@
             x:Name="payBTN" Click="payBTN_Click"
             
             >Оплатить</Button>
+        <TextBlock
+            FontSize="28"
+            Grid.ColumnSpan="4"
+            HorizontalAlignment="Center"
+            Text="Ключица">
+            
+        </TextBlock>
     </Grid>
 </Window>

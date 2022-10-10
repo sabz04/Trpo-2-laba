@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -13,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Trpo_2_laba
 {
@@ -21,22 +24,27 @@ namespace Trpo_2_laba
     /// </summary>
     public partial class Working_Window : Window
     {
-        
-        public Working_Window(int change)
+        private DispatcherTimer timer = null;
+        public Working_Window()
         {
             
             InitializeComponent();
-            Disp(change);
+            Timer();
         }
-        private void Disp(int change)
+        private void Disp()
         {
 
-            //for (int i = 0; i <= 10; i++)
-            //{
-            //    prgBar.Value = i;
-            //    //Thread.Sleep(1000);
-
-           
+        }
+        void Timer()
+        {
+            timer = new DispatcherTimer();
+            timer.Tick += new EventHandler(Print);
+            timer.Interval = new TimeSpan(0, 0, 0, 0, 1000);
+            timer.Start();
+        }
+        private void Print(object sender, EventArgs e)
+        {
+            prgBar.Value += 3;
         }
     }
 }

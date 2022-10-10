@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trpo_2_laba"
         mc:Ignorable="d"
-        Title="Аппарат работает..." Height="200" Width="300">
+        Title="Аппарат работает..." Height="200" Width="300" Background="#FF349DFF">
     <Grid>
         <StackPanel
             VerticalAlignment="Center"
@@ -17,6 +17,7 @@
                 FontSize="18"
                 Margin="10">Наливаю...</TextBlock>
             <ProgressBar
+                Foreground="#FF91B8EC"
                 x:Name="prgBar"
                 Maximum="10"
                 Width="300"
