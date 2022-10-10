@@ -17,7 +17,6 @@ namespace Trpo_2_laba
             Name = name;
             Volume = vol;
             Price = pr;
-
         }
 
 
