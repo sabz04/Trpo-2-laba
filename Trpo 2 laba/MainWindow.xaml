@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Trpo_2_laba"
         mc:Ignorable="d"
         Icon="https://cdn-icons-png.flaticon.com/512/850/850785.png"
-        Title="Ключица" Height="450" Width="400" Background="#FF349DFF" ResizeMode="NoResize" WindowStyle="ToolWindow">
+        Title="Ключица" Height="450" Width="396" Background="#FF349DFF" ResizeMode="NoResize" WindowStyle="ToolWindow">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="FontSize" Value="18"/>
@@ -14,7 +14,7 @@
             <Setter Property="Background" Value="#FF91B8EC"></Setter>
         </Style>
     </Window.Resources>
-
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>

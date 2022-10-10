@@ -102,102 +102,7 @@ namespace Trpo_2_laba
             Clear();
         }
 
-        private string Change_Calc(int change)
-        {
-            int main_counter = 0;
-
-            int chg_temp = change;
-
-            List<int> nums = new List<int>();
-
-            int chg_temp_counter_100 = 0;
-            int chg_temp_counter_50 = 0;
-            int chg_temp_counter_10 = 0;
-            int chg_temp_counter_5 = 0;
-            int chg_temp_counter_2 = 0;
-            int chg_temp_counter_1 = 0;
-
-            while (chg_temp >= 100)
-            {
-                chg_temp = chg_temp - 100;
-                chg_temp_counter_100++;
-                main_counter++;
-            }
-
-            while (chg_temp >= 50)
-            {
-                chg_temp = chg_temp - 50;
-                chg_temp_counter_50++;
-                main_counter++;
-            }
-
-            while (chg_temp >= 10)
-            {
-                chg_temp = chg_temp - 10;
-                chg_temp_counter_10++;
-                main_counter++;
-            }
-
-            while (chg_temp >= 5)
-            {
-                chg_temp = chg_temp - 5;
-                chg_temp_counter_5++;
-                main_counter++;
-            }
-
-            while (chg_temp >= 2)
-            {
-                chg_temp = chg_temp - 2;
-                chg_temp_counter_2++;
-                main_counter++;
-            }
-
-            while (chg_temp >= 1)
-            {
-                chg_temp = chg_temp - 1;
-                chg_temp_counter_1++;
-                main_counter++;
-            }
-
-            string str = "";
-            for(int i = 0; i < main_counter; i--)
-            {
-                if (chg_temp_counter_100 > 0)
-                {
-                    str += "+100";
-                    chg_temp_counter_100--;
-                }
-                if (chg_temp_counter_50 > 0)
-                {
-                    str += "+50";
-                    chg_temp_counter_50--;
-                }
-                if (chg_temp_counter_10 > 0)
-                {
-                    str += "+10";
-                    chg_temp_counter_10--;
-                }
-                if (chg_temp_counter_5 > 0)
-                {
-                    str += "+5";
-                    chg_temp_counter_5--;
-                }
-                if (chg_temp_counter_2 > 0)
-                {
-                    str += "+2";
-                    chg_temp_counter_2--;
-                }
-                if (chg_temp_counter_1 > 0)
-                {
-                    str += "+1";
-                    chg_temp_counter_1--;
-                }
-            }
-
-            return str;
-
-
-        }
+        
         private void payBTN_Click(object sender, RoutedEventArgs e)
         {
             if (curWater == null)
@@ -210,12 +115,12 @@ namespace Trpo_2_laba
                 MessageBox.Show("Недостаточно средств!");
                 return;
             }
-            Working_Window working_Window = new Working_Window();
-            working_Window.Show();
-            this.Hide();
-            MessageBox.Show($"Спасибо за покупку!\nВаша сдача: {Change_Calc(Change)}₽");
-            working_Window.Close();
-            this.Show();
+
+
+            Working_Window working = new Working_Window(Change);
+            working.Show();
+            //MessageBox.Show($"Спасибо за покупку!\nВаша сдача: {Change_Calc(Change)}₽");
+            
             Clear();
         }
         private void Clear()

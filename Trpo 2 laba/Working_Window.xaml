@@ -17,6 +17,7 @@
                 FontSize="18"
                 Margin="10">Наливаю...</TextBlock>
             <ProgressBar
+                
                 Foreground="#FF91B8EC"
                 x:Name="prgBar"
                 Maximum="10"
