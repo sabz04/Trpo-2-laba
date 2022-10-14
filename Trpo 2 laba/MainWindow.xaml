@@ -5,10 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trpo_2_laba"
         mc:Ignorable="d"
-        Icon="https://cdn-icons-png.flaticon.com/512/850/850785.png"
-        Title="Ключица" Height="450" Width="396" Background="#FF349DFF" ResizeMode="NoResize" WindowStyle="ToolWindow">
+        
+        Icon="./Res/water.png"
+        Title="Ключица" Height="450" Width="430" Background="#FF349DFF" ResizeMode="NoResize" WindowStyle="ToolWindow">
     <Window.Resources>
+        <Style TargetType="TextBlock">
+            
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+        </Style>
         <Style TargetType="Button">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="8"/>
+                </Style>
+            </Style.Resources>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
             <Setter Property="FontSize" Value="18"/>
             <Setter Property="Margin" Value="4"/>
             <Setter Property="Background" Value="#FF91B8EC"></Setter>
@@ -45,6 +56,7 @@
             </StackPanel>
         </Border>
         <Border 
+            
             BorderThickness="1"
             BorderBrush="Black"
             VerticalAlignment="Center"
@@ -70,7 +82,7 @@
             >
             <TextBlock 
                 TextAlignment="Center"
-                FontSize="18"
+                FontSize="20"
                 Text="Ассортимент"
                />
             <Button x:Name="water_gas_5" Click="water_gas_5_Click"
@@ -87,7 +99,7 @@
                     >
             <TextBlock 
                 TextAlignment="Center"
-                FontSize="18"
+                FontSize="20"
                 Text="Принимаем:"
                />
 

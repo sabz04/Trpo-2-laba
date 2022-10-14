@@ -5,16 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trpo_2_laba"
         mc:Ignorable="d"
+        Icon="./Res/water.png"
         Title="Аппарат работает..." Height="200" Width="300" Background="#FF349DFF">
     <Grid>
         <StackPanel
             VerticalAlignment="Center"
             HorizontalAlignment="Left"
-           
-          
             >
             <TextBlock 
-                FontSize="18"
+                FontSize="33"
                 Margin="10">Наливаю...</TextBlock>
             <ProgressBar
                 

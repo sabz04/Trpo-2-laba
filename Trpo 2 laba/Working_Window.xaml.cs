@@ -148,7 +148,7 @@ namespace Trpo_2_laba
                 }
                 
             }
-            MessageBox.Show($"Ваша сдача: \n{str}");
+            MessageBox.Show($"Ваша сдача: \n{str} = {Chan}");
             Console.WriteLine(str);
             Dispatcher.Invoke(wrk.Close);
             //return str;
