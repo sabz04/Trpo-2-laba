@@ -13,6 +13,7 @@
             HorizontalAlignment="Left"
             >
             <TextBlock 
+                FontFamily="Comic Sans MS"
                 FontSize="33"
                 Margin="10">Наливаю...</TextBlock>
             <ProgressBar
