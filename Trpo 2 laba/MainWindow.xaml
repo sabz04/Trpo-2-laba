@@ -7,7 +7,11 @@
         mc:Ignorable="d"
         
         Icon="./Res/water.png"
-        Title="Ключица" Height="450" Width="430" Background="#FF349DFF" ResizeMode="NoResize" WindowStyle="ToolWindow">
+       
+        Title="Ключица" Height="450" Width="430"  ResizeMode="NoResize" WindowStyle="ToolWindow">
+    <Window.Background>
+        <ImageBrush ImageSource="./Res/waterBackground.jpg"/>
+    </Window.Background>
     <Window.Resources>
         <Style TargetType="TextBlock">
             
